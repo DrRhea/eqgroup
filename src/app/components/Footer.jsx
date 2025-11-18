@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,7 +11,15 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* Company Info */}
             <div className="md:col-span-2">
-              <h3 className="text-xl font-bold text-white mb-4">EQ Group Global</h3>
+              <Link href="/" className="inline-block mb-4">
+                <Image
+                  src="/images/logo/eq-group-logo.jpeg"
+                  alt="EQ Group Global Logo"
+                  width={150}
+                  height={50}
+                  className="h-10 md:h-12 w-auto object-contain"
+                />
+              </Link>
               <p className="text-slate-400 leading-relaxed mb-4">
                 Kumpulan syarikat moden yang aktif dalam pelbagai bidang pendidikan, teknologi, F&B dan gaya hidup.
               </p>
