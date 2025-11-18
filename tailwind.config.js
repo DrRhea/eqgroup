@@ -10,6 +10,17 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-montserrat)', 'sans-serif'],
       },
+      colors: {
+        primary: {
+          DEFAULT: '#00365c',
+        },
+        secondary: {
+          DEFAULT: '#fff',
+        },
+        accent: {
+          DEFAULT: '#0675ad',
+        },
+      },
     },
   },
   plugins: [],

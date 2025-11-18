@@ -20,7 +20,7 @@ export default function TentangKami() {
                 <p>
                   Nama "EQ" diambil daripada nama pengasasnya, <span className="font-semibold text-slate-900">Ezzat Qaisar</span>, menggambarkan identiti kepimpinan, nilai ketulusan dan semangat keusahawanan yang menjadi teras kepada setiap syarikat di bawah kumpulan ini.
                 </p>
-                <blockquote className="border-l-4 border-blue-600 pl-6 italic text-slate-600 my-6">
+                <blockquote className="border-l-4 border-accent pl-6 italic text-slate-600 my-6">
                   "EQ bukan sekadar singkatan nama, tetapi simbol dedikasi dan nilai yang membentuk setiap langkah perjalanan kami."
                   <footer className="mt-2 text-slate-500">— Ezzat Qaisar, Pengasas EQ Group Global</footer>
                 </blockquote>
@@ -43,10 +43,10 @@ export default function TentangKami() {
                   EQ Group Global kini melibatkan empat sektor utama:
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
-                  <li><span className="font-semibold text-blue-600">Pendidikan Islamic</span> - Smart Quran Malaysia Centre</li>
-                  <li><span className="font-semibold text-indigo-600">Sistem Pengurusan Pusat Tuisyen</span> - eMindTutor</li>
-                  <li><span className="font-semibold text-purple-600">Pengurusan Sumber Manusia</span> – Core HR Centre</li>
-                  <li><span className="font-semibold text-pink-600">F&B Antarabangsa</span> – EQ F&B Division (Akan Datang)</li>
+                  <li><span className="font-semibold text-accent">Pendidikan Islamic</span> - Smart Quran Malaysia Centre</li>
+                  <li><span className="font-semibold text-accent">Sistem Pengurusan Pusat Tuisyen</span> - eMindTutor</li>
+                  <li><span className="font-semibold text-accent">Pengurusan Sumber Manusia</span> – Core HR Centre</li>
+                  <li><span className="font-semibold text-accent">F&B Antarabangsa</span> – EQ F&B Division (Akan Datang)</li>
                 </ul>
               </div>
             </div>

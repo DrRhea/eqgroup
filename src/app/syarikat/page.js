@@ -11,7 +11,7 @@ export default function Syarikat() {
             <div className="space-y-16">
               {/* Smart Quran Malaysia Centre */}
               <div className="border-b border-slate-200 pb-12">
-                <h3 className="text-2xl md:text-3xl font-bold text-blue-600 mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-accent mb-6">
                   Smart Quran Malaysia Centre
                 </h3>
                 <div className="space-y-4 text-lg text-slate-700 leading-relaxed">
@@ -37,7 +37,7 @@ export default function Syarikat() {
 
               {/* eMindTutor */}
               <div className="border-b border-slate-200 pb-12">
-                <h3 className="text-2xl md:text-3xl font-bold text-indigo-600 mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-accent mb-6">
                   eMindTutor
                 </h3>
                 <div className="space-y-4 text-lg text-slate-700 leading-relaxed">
@@ -60,11 +60,11 @@ export default function Syarikat() {
 
               {/* Core HR Centre */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-purple-600 mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-accent mb-6">
                   Core HR Centre
                 </h3>
                 <div className="space-y-4 text-lg text-slate-700 leading-relaxed">
-                  <blockquote className="border-l-4 border-purple-600 pl-6 italic text-slate-600 my-4">
+                  <blockquote className="border-l-4 border-accent pl-6 italic text-slate-600 my-4">
                     "Menyusun, Mengurus & Mengoptimumkan Potensi Tenaga Kerja Syarikat Anda."
                   </blockquote>
                   <p>

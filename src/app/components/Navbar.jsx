@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
@@ -18,8 +19,15 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="text-xl md:text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors">
-            EQ GROUP GLOBAL
+          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <Image
+              src="/images/logo/eq-group-logo.jpeg"
+              alt="EQ Group Global Logo"
+              width={150}
+              height={50}
+              className="h-10 md:h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -32,8 +40,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`text-base font-medium transition-colors ${
                     isActive
-                      ? 'text-blue-600 border-b-2 border-blue-600 pb-1'
-                      : 'text-slate-700 hover:text-blue-600'
+                      ? 'text-accent border-b-2 border-accent pb-1'
+                      : 'text-slate-700 hover:text-accent'
                   }`}
                 >
                   {item.label}
@@ -44,7 +52,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-slate-700 hover:text-blue-600 focus:outline-none"
+            className="md:hidden text-slate-700 hover:text-accent focus:outline-none"
             onClick={() => {
               const menu = document.getElementById('mobile-menu');
               menu?.classList.toggle('hidden');
@@ -76,8 +84,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`text-base font-medium transition-colors ${
                     isActive
-                      ? 'text-blue-600 border-l-4 border-blue-600 pl-3'
-                      : 'text-slate-700 hover:text-blue-600 pl-3'
+                      ? 'text-accent border-l-4 border-accent pl-3'
+                      : 'text-slate-700 hover:text-accent pl-3'
                   }`}
                   onClick={() => {
                     const menu = document.getElementById('mobile-menu');
