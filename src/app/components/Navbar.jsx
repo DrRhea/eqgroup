@@ -3,9 +3,21 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { href: '/', label: 'Home' },
@@ -15,9 +27,13 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-white/90 backdrop-blur-md' 
+        : 'bg-transparent'
+    }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
             <Image
@@ -25,26 +41,40 @@ export default function Navbar() {
               alt="EQ Group Global Logo"
               width={150}
               height={50}
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-8 md:h-10 w-auto object-contain"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-base font-medium transition-colors ${
+                  className={`relative text-sm font-medium transition-colors ${
                     isActive
-                      ? 'text-accent border-b-2 border-accent pb-1'
-                      : 'text-slate-700 hover:text-accent'
+                      ? isScrolled
+                        ? 'text-accent'
+                        : 'text-secondary'
+                      : isScrolled
+                      ? 'text-slate-700 hover:text-accent'
+                      : 'text-secondary hover:text-accent'
                   }`}
                 >
                   {item.label}
+                  {/* Animated Underline */}
+                  <span 
+                    className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
+                      isActive 
+                        ? isScrolled
+                          ? 'bg-accent w-full'
+                          : 'bg-secondary w-full'
+                        : 'bg-accent w-0 hover:w-full'
+                    }`}
+                  ></span>
                 </Link>
               );
             })}
@@ -52,7 +82,11 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-slate-700 hover:text-accent focus:outline-none"
+            className={`md:hidden transition-colors ${
+              isScrolled 
+                ? 'text-slate-700 hover:text-accent' 
+                : 'text-secondary hover:text-accent'
+            } focus:outline-none`}
             onClick={() => {
               const menu = document.getElementById('mobile-menu');
               menu?.classList.toggle('hidden');
@@ -74,18 +108,22 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        <div id="mobile-menu" className="hidden md:hidden pb-4">
-          <div className="flex flex-col space-y-3">
+        <div id="mobile-menu" className="hidden md:hidden pb-3">
+          <div className="flex flex-col space-y-2">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-base font-medium transition-colors ${
+                  className={`text-sm font-medium transition-colors ${
                     isActive
-                      ? 'text-accent border-l-4 border-accent pl-3'
-                      : 'text-slate-700 hover:text-accent pl-3'
+                      ? isScrolled
+                        ? 'text-accent border-l-4 border-accent pl-3'
+                        : 'text-secondary border-l-4 border-secondary pl-3'
+                      : isScrolled
+                      ? 'text-slate-700 hover:text-accent pl-3'
+                      : 'text-secondary hover:text-accent pl-3'
                   }`}
                   onClick={() => {
                     const menu = document.getElementById('mobile-menu');

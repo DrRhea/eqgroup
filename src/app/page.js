@@ -4,21 +4,22 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: 'easeOut' }
+  initial: { opacity: 0, y: 30, scale: 0.98 },
+  animate: { opacity: 1, y: 0, scale: 1 },
+  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
 };
 
 const fadeIn = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  transition: { duration: 0.8, ease: 'easeOut' }
+  initial: { opacity: 0, scale: 0.95 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
 };
 
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.15,
+      delayChildren: 0.1
     }
   }
 };
@@ -27,8 +28,20 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-white py-20 md:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-white py-20 md:py-32 min-h-[60vh] flex items-center">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/images/background/home-hero.webp)'
+          }}
+        ></div>
+        
+        {/* Overlay untuk readability */}
+        <div className="absolute inset-0 bg-primary/70"></div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             className="max-w-5xl mx-auto text-center"
             initial="initial"
@@ -36,19 +49,19 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-secondary mb-6 tracking-tight"
               variants={fadeInUp}
             >
               EQ GROUP GLOBAL
             </motion.h1>
             
             <motion.div 
-              className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-accent mx-auto mb-8"
+              className="w-24 h-1 bg-gradient-to-r from-accent via-accent to-accent mx-auto mb-8"
               variants={fadeIn}
             ></motion.div>
             
             <motion.p 
-              className="text-xl sm:text-2xl md:text-3xl text-slate-700 font-medium leading-relaxed"
+              className="text-xl sm:text-2xl md:text-3xl text-secondary font-medium leading-relaxed"
               variants={fadeInUp}
             >
               Menerajui Pelbagai Industri Menuju Masa Depan Serantau
@@ -64,7 +77,7 @@ export default function Home() {
             className="max-w-5xl mx-auto"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeInUp}
           >
             <div className="bg-white shadow-2xl p-8 md:p-12 lg:p-16 border border-slate-200">
@@ -100,7 +113,7 @@ export default function Home() {
             className="max-w-5xl mx-auto"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeInUp}
           >
             <div className="bg-slate-50 p-8 md:p-12 border border-slate-200">
@@ -127,7 +140,7 @@ export default function Home() {
             className="max-w-5xl mx-auto"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeInUp}
           >
             <div className="bg-slate-50 p-8 md:p-12 border border-slate-200">
@@ -154,7 +167,7 @@ export default function Home() {
             className="max-w-5xl mx-auto"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeInUp}
           >
             <div className="bg-slate-50 p-8 md:p-12 border border-slate-200">

@@ -1,6 +1,6 @@
 export default function TentangKami() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-14 md:pt-16">
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
