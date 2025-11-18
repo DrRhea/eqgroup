@@ -71,18 +71,18 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-slate-50 py-20 md:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            className="max-w-5xl mx-auto"
+            className="max-w-6xl mx-auto"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.2 }}
             variants={fadeInUp}
           >
-            <div className="bg-white shadow-2xl p-8 md:p-12 lg:p-16 border border-slate-200">
-              <div className="space-y-8 text-lg md:text-xl text-slate-700 leading-relaxed">
-                <p className="text-center">
+            <div className="bg-white shadow-lg p-10 md:p-16 lg:p-20">
+              <div className="space-y-10 text-lg md:text-xl text-slate-700 leading-relaxed">
+                <p className="text-center max-w-4xl mx-auto">
                   EQ Group Global ialah kumpulan syarikat moden yang aktif dalam pelbagai bidang{' '}
                   <span className="font-semibold text-accent">pendidikan</span>,{' '}
                   <span className="font-semibold text-accent">teknologi</span>,{' '}
@@ -90,9 +90,9 @@ export default function Home() {
                   <span className="font-semibold text-accent">gaya hidup</span>.
                 </p>
 
-                <div className="h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent my-8"></div>
+                <div className="h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent my-10"></div>
 
-                <p className="text-center">
+                <p className="text-center max-w-4xl mx-auto">
                   EQ Group Global ialah kumpulan syarikat pelbagai industri yang berpusat di{' '}
                   <span className="font-semibold text-slate-900">Malaysia</span> dan kini melangkah ke peringkat{' '}
                   <span className="font-semibold text-slate-900">antarabangsa</span>. Kami percaya kepada kekuatan{' '}
@@ -106,84 +106,123 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tentang Kami Preview Section */}
-      <section className="bg-white py-16 md:py-24">
+      {/* Navigation Preview Section */}
+      <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="max-w-5xl mx-auto"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInUp}
-          >
-            <div className="bg-slate-50 p-8 md:p-12 border border-slate-200">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
-                Tentang Kami
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeInUp}
+              className="mb-12 text-center"
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+                Terokai Lebih Lanjut
               </h2>
-              <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-6 text-center">
-                Ketahui lebih lanjut tentang sejarah, visi, misi dan pengasas EQ Group Global.
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                Ketahui lebih lanjut tentang EQ Group Global dan perkhidmatan yang kami tawarkan
               </p>
-              <div className="text-center">
-                <Link href="/tentang-kami" className="inline-block text-accent font-semibold hover:text-primary transition-colors">
-                  Baca selengkapnya →
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+            </motion.div>
 
-      {/* Syarikat Preview Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="max-w-5xl mx-auto"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInUp}
-          >
-            <div className="bg-slate-50 p-8 md:p-12 border border-slate-200">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
-                Syarikat
-              </h2>
-              <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-6 text-center">
-                Terokai syarikat-syarikat di bawah naungan EQ Group Global dan perkhidmatan yang ditawarkan.
-              </p>
-              <div className="text-center">
-                <Link href="/syarikat" className="inline-block text-accent font-semibold hover:text-primary transition-colors">
-                  Baca selengkapnya →
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Tentang Kami Card */}
+              <motion.div
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+              >
+                <Link href="/tentang-kami" className="group block h-full">
+                  <div className="bg-white border-2 border-slate-200 p-8 md:p-10 h-full flex flex-col hover:border-accent hover:shadow-xl transition-all duration-300">
+                    <div className="mb-6">
+                      <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+                        <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-accent transition-colors">
+                        Tentang Kami
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
+                      Ketahui lebih lanjut tentang sejarah, visi, misi dan pengasas EQ Group Global.
+                    </p>
+                    <div className="flex items-center text-accent font-semibold group-hover:translate-x-2 transition-transform">
+                      <span>Baca selengkapnya</span>
+                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
                 </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+              </motion.div>
 
-      {/* Hubungi Kami Preview Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="max-w-5xl mx-auto"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInUp}
-          >
-            <div className="bg-slate-50 p-8 md:p-12 border border-slate-200">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
-                Hubungi Kami
-              </h2>
-              <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-6 text-center">
-                Hubungi kami untuk sebarang pertanyaan atau cadangan mengenai perkhidmatan kami.
-              </p>
-              <div className="text-center">
-                <Link href="/hubungi-kami" className="inline-block text-accent font-semibold hover:text-primary transition-colors">
-                  Baca selengkapnya →
+              {/* Syarikat Card */}
+              <motion.div
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+              >
+                <Link href="/syarikat" className="group block h-full">
+                  <div className="bg-white border-2 border-slate-200 p-8 md:p-10 h-full flex flex-col hover:border-accent hover:shadow-xl transition-all duration-300">
+                    <div className="mb-6">
+                      <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+                        <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-accent transition-colors">
+                        Syarikat
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
+                      Terokai syarikat-syarikat di bawah naungan EQ Group Global dan perkhidmatan yang ditawarkan.
+                    </p>
+                    <div className="flex items-center text-accent font-semibold group-hover:translate-x-2 transition-transform">
+                      <span>Baca selengkapnya</span>
+                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
                 </Link>
-              </div>
+              </motion.div>
+
+              {/* Hubungi Kami Card */}
+              <motion.div
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeInUp}
+              >
+                <Link href="/hubungi-kami" className="group block h-full">
+                  <div className="bg-white border-2 border-slate-200 p-8 md:p-10 h-full flex flex-col hover:border-accent hover:shadow-xl transition-all duration-300">
+                    <div className="mb-6">
+                      <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+                        <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-accent transition-colors">
+                        Hubungi Kami
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
+                      Hubungi kami untuk sebarang pertanyaan atau cadangan mengenai perkhidmatan kami.
+                    </p>
+                    <div className="flex items-center text-accent font-semibold group-hover:translate-x-2 transition-transform">
+                      <span>Baca selengkapnya</span>
+                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
