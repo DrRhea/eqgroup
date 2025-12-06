@@ -56,25 +56,25 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/90 backdrop-blur-md' 
+        ? 'backdrop-blur-md bg-white/90' 
         : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 md:h-16">
+      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-14 md:h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity bg-white rounded-md px-2 py-1">
+          <Link href="/" className="flex items-center transition-opacity hover:opacity-80">
             <Image
               src="/images/logo/eq-group-logo.png"
               alt="EQ Group Global Logo"
               width={150}
               height={50}
-              className="h-10 md:h-12 w-auto object-contain"
+              className="object-contain w-auto h-14 md:h-16"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden items-center space-x-6 md:flex">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -143,7 +143,7 @@ export default function Navbar() {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-slate-200 py-2 z-50">
+                <div className="absolute left-0 top-full z-50 py-2 mt-2 w-64 bg-white rounded-lg border shadow-xl border-slate-200">
                   {syarikatItems.map((item) => {
                     const isActive = pathname === item.href;
                     return (
@@ -153,7 +153,7 @@ export default function Navbar() {
                         onClick={() => setIsDropdownOpen(false)}
                         className={`block px-4 py-2 text-sm transition-colors ${
                           isActive
-                            ? 'text-accent bg-accent/10 font-semibold'
+                            ? 'font-semibold text-accent bg-accent/10'
                             : 'text-slate-700 hover:text-accent hover:bg-slate-50'
                         }`}
                       >
@@ -220,7 +220,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        <div id="mobile-menu" className="hidden md:hidden pb-3">
+        <div id="mobile-menu" className="hidden pb-3 md:hidden">
           <div className="flex flex-col space-y-2">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
@@ -231,11 +231,11 @@ export default function Navbar() {
                   className={`text-sm font-medium transition-colors ${
                     isActive
                       ? isScrolled
-                        ? 'text-accent border-l-4 border-accent pl-3'
-                        : 'text-secondary border-l-4 border-secondary pl-3'
+                        ? 'pl-3 border-l-4 text-accent border-accent'
+                        : 'pl-3 border-l-4 text-secondary border-secondary'
                       : isScrolled
-                      ? 'text-slate-700 hover:text-accent pl-3'
-                      : 'text-secondary hover:text-accent pl-3'
+                      ? 'pl-3 text-slate-700 hover:text-accent'
+                      : 'pl-3 text-secondary hover:text-accent'
                   }`}
                   onClick={() => {
                     const menu = document.getElementById('mobile-menu');
@@ -257,11 +257,11 @@ export default function Navbar() {
                 className={`text-sm font-medium transition-colors flex items-center justify-between w-full ${
                   isSyarikatPage
                     ? isScrolled
-                      ? 'text-accent border-l-4 border-accent pl-3'
-                      : 'text-secondary border-l-4 border-secondary pl-3'
+                      ? 'pl-3 border-l-4 text-accent border-accent'
+                      : 'pl-3 border-l-4 text-secondary border-secondary'
                     : isScrolled
-                    ? 'text-slate-700 hover:text-accent pl-3'
-                    : 'text-secondary hover:text-accent pl-3'
+                    ? 'pl-3 text-slate-700 hover:text-accent'
+                    : 'pl-3 text-secondary hover:text-accent'
                 }`}
               >
                 <span>Syarikat</span>
@@ -285,7 +285,7 @@ export default function Navbar() {
                       href={item.href}
                       className={`block text-sm transition-colors py-2 ${
                         isActive
-                          ? 'text-accent font-semibold'
+                          ? 'font-semibold text-accent'
                           : isScrolled
                           ? 'text-slate-600 hover:text-accent'
                           : 'text-slate-300 hover:text-secondary'

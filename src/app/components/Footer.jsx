@@ -5,42 +5,42 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-secondary py-12 md:py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+    <footer className="py-12 bg-primary text-secondary md:py-16">
+      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 gap-8 mb-8 md:grid-cols-5">
             {/* Company Info */}
             <div className="md:col-span-2">
-              <Link href="/" className="inline-block mb-4">
+              <Link href="/" className="inline-block mb-4 bg-white rounded-xl p-0.5 border border-slate-300">
                 <Image
                   src="/images/logo/eq-group-logo.png"
                   alt="EQ Group Global Logo"
                   width={150}
                   height={50}
-                  className="h-10 md:h-12 w-auto object-contain"
+                  className="object-contain w-auto h-16 md:h-20"
                 />
               </Link>
-              <p className="text-slate-400 leading-relaxed mb-4">
+              <p className="mb-4 leading-relaxed text-slate-400">
                 Kumpulan syarikat moden yang aktif dalam pelbagai bidang pendidikan, teknologi, F&B dan gaya hidup.
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Pautan Pantas</h4>
+              <h4 className="mb-4 text-lg font-semibold text-white">Pautan Pantas</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="text-slate-400 hover:text-white transition-colors">
+                  <Link href="/" className="transition-colors text-slate-400 hover:text-white">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tentang-kami" className="text-slate-400 hover:text-white transition-colors">
+                  <Link href="/tentang-kami" className="transition-colors text-slate-400 hover:text-white">
                     Tentang Kami
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hubungi-kami" className="text-slate-400 hover:text-white transition-colors">
+                  <Link href="/hubungi-kami" className="transition-colors text-slate-400 hover:text-white">
                     Hubungi Kami
                   </Link>
                 </li>
@@ -49,20 +49,20 @@ export default function Footer() {
 
             {/* Syarikat */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Syarikat</h4>
+              <h4 className="mb-4 text-lg font-semibold text-white">Syarikat</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/syarikat/smart-quran-malaysia-centre" className="text-slate-400 hover:text-white transition-colors">
+                  <Link href="/syarikat/smart-quran-malaysia-centre" className="transition-colors text-slate-400 hover:text-white">
                     Smart Quran Malaysia Centre
                   </Link>
                 </li>
                 <li>
-                  <Link href="/syarikat/emindtutor" className="text-slate-400 hover:text-white transition-colors">
+                  <Link href="/syarikat/emindtutor" className="transition-colors text-slate-400 hover:text-white">
                     eMindTutor
                   </Link>
                 </li>
                 <li>
-                  <Link href="/syarikat/core-hr-centre" className="text-slate-400 hover:text-white transition-colors">
+                  <Link href="/syarikat/core-hr-centre" className="transition-colors text-slate-400 hover:text-white">
                     Core HR Centre
                   </Link>
                 </li>
@@ -71,7 +71,7 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Hubungi Kami</h4>
+              <h4 className="mb-4 text-lg font-semibold text-white">Hubungi Kami</h4>
               <ul className="space-y-2 text-slate-400">
                 <li>
                   Ibu Pejabat EQ Group Global
@@ -90,7 +90,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-slate-800 pt-8 text-center">
+          <div className="pt-8 text-center border-t border-slate-800">
             <p className="text-slate-400">
               © {currentYear} EQ Group Global. Hak cipta terpelihara.
             </p>
