@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-primary text-secondary py-12 md:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
             {/* Company Info */}
             <div className="md:col-span-2">
               <Link href="/" className="inline-block mb-4">
@@ -40,13 +40,30 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/syarikat" className="text-slate-400 hover:text-white transition-colors">
-                    Syarikat
+                  <Link href="/hubungi-kami" className="text-slate-400 hover:text-white transition-colors">
+                    Hubungi Kami
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Syarikat */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Syarikat</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/syarikat/smart-quran-malaysia-centre" className="text-slate-400 hover:text-white transition-colors">
+                    Smart Quran Malaysia Centre
                   </Link>
                 </li>
                 <li>
-                  <Link href="/hubungi-kami" className="text-slate-400 hover:text-white transition-colors">
-                    Hubungi Kami
+                  <Link href="/syarikat/emindtutor" className="text-slate-400 hover:text-white transition-colors">
+                    eMindTutor
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/syarikat/core-hr-centre" className="text-slate-400 hover:text-white transition-colors">
+                    Core HR Centre
                   </Link>
                 </li>
               </ul>

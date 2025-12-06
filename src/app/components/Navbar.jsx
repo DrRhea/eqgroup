@@ -8,7 +8,9 @@ import { useState, useEffect } from 'react';
 export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const isHomePage = pathname === '/';
+  const isSyarikatPage = pathname.startsWith('/syarikat');
 
   useEffect(() => {
     // Only track scroll on home page
@@ -26,11 +28,29 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomePage]);
 
+  useEffect(() => {
+    // Close dropdown when clicking outside
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.dropdown-container')) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
+  }, [isDropdownOpen]);
+
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/tentang-kami', label: 'Tentang Kami' },
-    { href: '/syarikat', label: 'Syarikat' },
-    { href: '/hubungi-kami', label: 'Hubungi Kami' },
+  ];
+
+  const syarikatItems = [
+    { href: '/syarikat/smart-quran-malaysia-centre', label: 'Smart Quran Malaysia Centre' },
+    { href: '/syarikat/emindtutor', label: 'eMindTutor' },
+    { href: '/syarikat/core-hr-centre', label: 'Core HR Centre' },
   ];
 
   return (
@@ -85,6 +105,91 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
+            {/* Syarikat Dropdown */}
+            <div className="relative dropdown-container">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className={`relative text-sm font-medium transition-colors flex items-center ${
+                  isSyarikatPage
+                    ? isScrolled
+                      ? 'text-accent'
+                      : 'text-secondary'
+                    : isScrolled
+                    ? 'text-slate-700 hover:text-accent'
+                    : 'text-secondary hover:text-accent'
+                }`}
+              >
+                Syarikat
+                <svg 
+                  className={`w-4 h-4 ml-1 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+                {/* Animated Underline */}
+                <span 
+                  className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
+                    isSyarikatPage 
+                      ? isScrolled
+                        ? 'bg-accent w-full'
+                        : 'bg-secondary w-full'
+                      : 'bg-accent w-0 hover:w-full'
+                  }`}
+                ></span>
+              </button>
+
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-slate-200 py-2 z-50">
+                  {syarikatItems.map((item) => {
+                    const isActive = pathname === item.href;
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setIsDropdownOpen(false)}
+                        className={`block px-4 py-2 text-sm transition-colors ${
+                          isActive
+                            ? 'text-accent bg-accent/10 font-semibold'
+                            : 'text-slate-700 hover:text-accent hover:bg-slate-50'
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {/* Hubungi Kami */}
+            <Link
+              href="/hubungi-kami"
+              className={`relative text-sm font-medium transition-colors ${
+                pathname === '/hubungi-kami'
+                  ? isScrolled
+                    ? 'text-accent'
+                    : 'text-secondary'
+                  : isScrolled
+                  ? 'text-slate-700 hover:text-accent'
+                  : 'text-secondary hover:text-accent'
+              }`}
+            >
+              Hubungi Kami
+              {/* Animated Underline */}
+              <span 
+                className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
+                  pathname === '/hubungi-kami' 
+                    ? isScrolled
+                      ? 'bg-accent w-full'
+                      : 'bg-secondary w-full'
+                    : 'bg-accent w-0 hover:w-full'
+                }`}
+              ></span>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -141,6 +246,81 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
+            {/* Mobile Syarikat Dropdown */}
+            <div className="dropdown-container">
+              <button
+                onClick={() => {
+                  const submenu = document.getElementById('mobile-syarikat-submenu');
+                  submenu?.classList.toggle('hidden');
+                }}
+                className={`text-sm font-medium transition-colors flex items-center justify-between w-full ${
+                  isSyarikatPage
+                    ? isScrolled
+                      ? 'text-accent border-l-4 border-accent pl-3'
+                      : 'text-secondary border-l-4 border-secondary pl-3'
+                    : isScrolled
+                    ? 'text-slate-700 hover:text-accent pl-3'
+                    : 'text-secondary hover:text-accent pl-3'
+                }`}
+              >
+                <span>Syarikat</span>
+                <svg 
+                  className="w-4 h-4"
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Mobile Submenu */}
+              <div id="mobile-syarikat-submenu" className="hidden pl-6 mt-2 space-y-1">
+                {syarikatItems.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`block text-sm transition-colors py-2 ${
+                        isActive
+                          ? 'text-accent font-semibold'
+                          : isScrolled
+                          ? 'text-slate-600 hover:text-accent'
+                          : 'text-slate-300 hover:text-secondary'
+                      }`}
+                      onClick={() => {
+                        const menu = document.getElementById('mobile-menu');
+                        menu?.classList.add('hidden');
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Mobile Hubungi Kami */}
+            <Link
+              href="/hubungi-kami"
+              className={`text-sm font-medium transition-colors ${
+                pathname === '/hubungi-kami'
+                  ? isScrolled
+                    ? 'text-accent border-l-4 border-accent pl-3'
+                    : 'text-secondary border-l-4 border-secondary pl-3'
+                  : isScrolled
+                  ? 'text-slate-700 hover:text-accent pl-3'
+                  : 'text-secondary hover:text-accent pl-3'
+              }`}
+              onClick={() => {
+                const menu = document.getElementById('mobile-menu');
+                menu?.classList.add('hidden');
+              }}
+            >
+              Hubungi Kami
+            </Link>
           </div>
         </div>
       </div>
