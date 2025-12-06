@@ -62,13 +62,13 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity bg-white rounded-md px-2 py-1">
             <Image
-              src="/images/logo/eq-group-logo.jpeg"
+              src="/images/logo/eq-group-logo.png"
               alt="EQ Group Global Logo"
               width={150}
               height={50}
-              className="h-8 md:h-10 w-auto object-contain"
+              className="h-10 md:h-12 w-auto object-contain"
               priority
             />
           </Link>

@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="md:col-span-2">
               <Link href="/" className="inline-block mb-4">
                 <Image
-                  src="/images/logo/eq-group-logo.jpeg"
+                  src="/images/logo/eq-group-logo.png"
                   alt="EQ Group Global Logo"
                   width={150}
                   height={50}

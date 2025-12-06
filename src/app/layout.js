@@ -48,7 +48,7 @@ export const metadata = {
     description: "EQ Group Global ialah kumpulan syarikat moden yang aktif dalam pelbagai bidang pendidikan, teknologi, F&B dan gaya hidup.",
     images: [
       {
-        url: "/images/logo/eq-group-logo.jpeg",
+        url: "/images/logo/eq-group-logo.png",
         width: 1024,
         height: 1024,
         alt: "EQ Group Global Logo",
@@ -59,19 +59,19 @@ export const metadata = {
     card: "summary_large_image",
     title: "EQ Group Global - Menerajui Pelbagai Industri Menuju Masa Depan Serantau",
     description: "EQ Group Global ialah kumpulan syarikat moden yang aktif dalam pelbagai bidang pendidikan, teknologi, F&B dan gaya hidup.",
-    images: ["/images/logo/eq-group-logo.jpeg"],
+    images: ["/images/logo/eq-group-logo.png"],
     creator: "@eqgroupglobal", // Update dengan Twitter handle sebenarnya jika ada
   },
   icons: {
     icon: [
-      { url: "/images/logo/eq-group-logo.jpeg", sizes: "any" },
-      { url: "/images/logo/eq-group-logo.jpeg", sizes: "32x32", type: "image/jpeg" },
-      { url: "/images/logo/eq-group-logo.jpeg", sizes: "16x16", type: "image/jpeg" },
+      { url: "/images/logo/eq-group-logo.png", sizes: "any" },
+      { url: "/images/logo/eq-group-logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/logo/eq-group-logo.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [
-      { url: "/images/logo/eq-group-logo.jpeg", sizes: "180x180", type: "image/jpeg" },
+      { url: "/images/logo/eq-group-logo.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/images/logo/eq-group-logo.jpeg",
+    shortcut: "/images/logo/eq-group-logo.png",
   },
   robots: {
     index: true,
