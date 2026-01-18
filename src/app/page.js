@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative bg-white h-[12vh] flex items-center overflow-hidden">
+      <section ref={heroRef} className="relative bg-white h-screen flex items-center overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
