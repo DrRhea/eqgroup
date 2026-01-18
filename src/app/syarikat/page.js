@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Syarikat() {
   const companies = [
@@ -6,31 +7,22 @@ export default function Syarikat() {
       href: '/syarikat/smart-quran-malaysia-centre',
       title: 'Smart Quran Malaysia Centre',
       description: 'Institusi pendidikan Islam moden yang memperkasa pembelajaran Al-Quran dan Fardhu Ain dalam suasana pembelajaran yang sistematik, interaktif dan fleksibel.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-        </svg>
-      )
+      logo: '/images/logo/smart-quran-logo.png',
+      alt: 'Smart Quran Malaysia Centre Logo'
     },
     {
       href: '/syarikat/emindtutor',
       title: 'eMindTutor',
       description: 'Platform digital "all-in-one" untuk membantu pusat tuisyen, kelas agama dan institusi pendidikan dalam mengurus guru, pelajar, kelas dan pembayaran secara efisien.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      )
+      logo: '/images/logo/emindtutor-logo.png',
+      alt: 'eMindTutor Logo'
     },
     {
       href: '/syarikat/core-hr-centre',
       title: 'Core HR Centre',
       description: 'Perkhidmatan pengurusan sumber manusia profesional untuk membantu syarikat menguruskan rekod pekerja, penggajian, caruman, kehadiran, cuti, dan penilaian prestasi.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      )
+      logo: '/images/logo/core-hr-logo.png',
+      alt: 'Core HR Centre Logo'
     }
   ];
 
@@ -53,8 +45,14 @@ export default function Syarikat() {
                   href={company.href}
                   className="group block bg-white border-2 border-slate-200 p-8 hover:border-accent hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-accent/10 transition-colors text-accent">
-                    {company.icon}
+                  <div className="w-full h-32 bg-white flex items-center justify-center mb-6 group-hover:bg-slate-50 transition-colors">
+                    <Image
+                      src={company.logo}
+                      alt={company.alt}
+                      width={200}
+                      height={120}
+                      className="object-contain max-h-24"
+                    />
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 group-hover:text-accent transition-colors">
                     {company.title}

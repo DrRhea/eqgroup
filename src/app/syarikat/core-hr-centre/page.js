@@ -1,9 +1,21 @@
+import Image from 'next/image';
+
 export default function CoreHRCentre() {
   return (
     <div className="min-h-screen bg-white pt-14 md:pt-16">
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
+            <div className="flex justify-center mb-8">
+              <Image
+                src="/images/logo/core-hr-logo.png"
+                alt="Core HR Centre Logo"
+                width={300}
+                height={150}
+                className="object-contain"
+                priority
+              />
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
               Core HR Centre
             </h2>
