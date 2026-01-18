@@ -126,7 +126,7 @@ export default function Navbar() {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute left-0 top-full z-50 py-4 mt-2 w-80 bg-white border border-[#0a0a0a]">
+                <div className="absolute left-0 top-full z-50 w-80 bg-white border border-[#0a0a0a]">
                   {syarikatItems.map((item) => {
                     const isActive = pathname === item.href;
                     return (
