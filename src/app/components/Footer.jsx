@@ -119,7 +119,7 @@ export default function Footer() {
             </div>
 
             {/* Copyright */}
-            <div className="pt-8">
+            <div className="pt-4">
               <p className="text-center text-base text-white/80">
                 © {currentYear} EQ Group Global. Hak cipta terpelihara.
               </p>
