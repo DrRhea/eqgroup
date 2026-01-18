@@ -73,6 +73,9 @@ export const metadata = {
     ],
     shortcut: "/favicon.ico",
   },
+  other: {
+    'google-fonts': 'https://fonts.googleapis.com',
+  },
   robots: {
     index: true,
     follow: true,
@@ -95,6 +98,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ms">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet" />
+      </head>
       <body className={`${inter.variable} font-sans`}>
         <Navbar />
         {children}
