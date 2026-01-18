@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30, scale: 0.98 },
@@ -25,17 +26,28 @@ const staggerContainer = {
 };
 
 export default function Home() {
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-white py-20 md:py-32 min-h-[60vh] flex items-center">
-        {/* Background Image */}
-        <div 
+      <section ref={heroRef} className="relative bg-white py-8 md:py-12 h-[12vh] flex items-center overflow-hidden">
+        {/* Background Image dengan Parallax Zoom Out */}
+        <motion.div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/background/home-hero.webp)'
+            backgroundImage: 'url(/images/background/home-hero.webp)',
+            scale: scale,
+            opacity: opacity,
           }}
-        ></div>
+        ></motion.div>
         
         {/* Overlay untuk readability */}
         <div className="absolute inset-0 bg-primary/70"></div>
