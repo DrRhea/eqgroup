@@ -22,12 +22,20 @@ export default function HubungiKami() {
 
                 <div>
                   <h3 className="font-semibold text-slate-900 mb-2">No Telefon:</h3>
-                  <p className="text-slate-500">-</p>
+                  <p className="text-slate-500">Tiada</p>
                 </div>
 
                 <div>
                   <h3 className="font-semibold text-slate-900 mb-2">E-mel:</h3>
-                  <p className="text-slate-500">-</p>
+                  <p className="text-slate-700">hq@eqgroupmalaysia.com</p>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-slate-900 mb-2">Jam Operasi:</h3>
+                  <p className="leading-relaxed">
+                    Setiap Ahad - Jumaat<br />
+                    7.40 Pagi - 6.30 Petang
+                  </p>
                 </div>
               </div>
             </div>

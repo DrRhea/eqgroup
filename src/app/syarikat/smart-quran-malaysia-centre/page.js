@@ -27,6 +27,31 @@ export default function SmartQuranMalaysiaCentre() {
                   <li>Kelas Pengajian Fiqh Darah Wanita</li>
                 </ol>
               </div>
+
+              <div className="mt-8 bg-slate-50 p-8 border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6">Maklumat Hubungan</h3>
+                <div className="space-y-4 text-lg text-slate-700">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">No Telefon:</h4>
+                    <p className="text-slate-700">010-330 6210</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">WhatsApp:</h4>
+                    <p className="text-slate-700">010-330 6210</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">E-mel:</h4>
+                    <p className="text-slate-700">hq@smartquranmy.com</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">Jam Operasi:</h4>
+                    <p className="leading-relaxed">
+                      Setiap Ahad - Jumaat<br />
+                      7.40 Pagi - 6.30 Petang
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

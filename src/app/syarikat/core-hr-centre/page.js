@@ -34,6 +34,31 @@ export default function CoreHRCentre() {
               <p className="mt-6">
                 Dengan pendekatan teknologi dan kepakaran HR terkini, Core HR Centre memastikan urusan sumber manusia anda berjalan lancar, patuh undang-undang dan lebih efisien.
               </p>
+
+              <div className="mt-8 bg-slate-50 p-8 border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-6">Maklumat Hubungan</h3>
+                <div className="space-y-4 text-lg text-slate-700">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">No Telefon:</h4>
+                    <p className="text-slate-500">Belum didaftar</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">WhatsApp:</h4>
+                    <p className="text-slate-500">Belum didaftar</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">E-mel:</h4>
+                    <p className="text-slate-500">Belum didaftar</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">Jam Operasi:</h4>
+                    <p className="leading-relaxed">
+                      Setiap Ahad - Jumaat<br />
+                      7.40 Pagi - 6.30 Petang
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
