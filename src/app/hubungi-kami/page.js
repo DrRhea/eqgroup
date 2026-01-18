@@ -1,48 +1,96 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 40 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
 export default function HubungiKami() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-14 md:pt-16">
-      <section className="bg-transparent py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
-              Hubungi Kami
-            </h2>
-            <p className="text-lg text-slate-700 text-center mb-12">
-              Hubungi kami untuk sebarang pertanyaan atau cadangan.
-            </p>
-
-            <div className="bg-slate-50 p-8 md:p-12 border border-slate-200">
-              <div className="space-y-6 text-lg text-slate-700">
-                <div>
-                  <h3 className="font-semibold text-slate-900 mb-2">Alamat:</h3>
-                  <p className="leading-relaxed">
-                    Ibu Pejabat EQ Group Global, No. 8, Arked MDB Kuala Ketil, 09300 Baling, Kedah Darul Aman, Malaysia
+    <div className="min-h-screen bg-white pt-14 md:pt-16">
+      <section className="bg-white py-24 md:py-32 lg:py-40">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+          <motion.div 
+            className="w-full"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={staggerContainer}
+          >
+            <div className="border-t border-b border-[#0a0a0a]">
+              <div className="py-24 lg:py-32 space-y-24">
+                {/* Header */}
+                <motion.div 
+                  className="text-center space-y-8"
+                  variants={fadeInUp}
+                >
+                  <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-[#0a0a0a] tracking-tight leading-[0.9]">
+                    HUBUNGI<br />KAMI
+                  </h1>
+                  <div className="h-2 w-32 bg-[#0675ad] mx-auto" />
+                  <p className="text-xl md:text-2xl text-[#0a0a0a] max-w-3xl mx-auto leading-relaxed">
+                    Hubungi kami untuk sebarang pertanyaan atau cadangan.
                   </p>
-                </div>
+                </motion.div>
 
-                <div>
-                  <h3 className="font-semibold text-slate-900 mb-2">No Telefon:</h3>
-                  <p className="text-slate-500">Tiada</p>
-                </div>
+                {/* Contact Information */}
+                <motion.div 
+                  className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16"
+                  variants={fadeInUp}
+                >
+                  <div className="lg:col-span-5">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a0a0a] mb-8 uppercase tracking-tight">
+                      Ibu Pejabat<br />EQ Group Global
+                    </h2>
+                  </div>
+                  
+                  <div className="lg:col-span-7 space-y-12">
+                    <div className="border-b border-[#0a0a0a] pb-8">
+                      <div className="text-sm md:text-base uppercase text-[#0a0a0a]/60 mb-3">Alamat</div>
+                      <p className="text-xl md:text-2xl text-[#0a0a0a] leading-relaxed">
+                        Ibu Pejabat EQ Group Global<br />
+                        No. 8, Arked MDB Kuala Ketil<br />
+                        09300 Baling, Kedah Darul Aman<br />
+                        Malaysia
+                      </p>
+                    </div>
 
-                <div>
-                  <h3 className="font-semibold text-slate-900 mb-2">E-mel:</h3>
-                  <p className="text-slate-700">hq@eqgroupmalaysia.com</p>
-                </div>
+                    <div className="border-b border-[#0a0a0a] pb-8">
+                      <div className="text-sm md:text-base uppercase text-[#0a0a0a]/60 mb-3">E-mel</div>
+                      <a 
+                        href="mailto:hq@eqgroupmalaysia.com" 
+                        className="text-2xl md:text-3xl font-bold text-[#0675ad] hover:text-[#0a0a0a] transition-colors duration-300"
+                      >
+                        hq@eqgroupmalaysia.com
+                      </a>
+                    </div>
 
-                <div>
-                  <h3 className="font-semibold text-slate-900 mb-2">Jam Operasi:</h3>
-                  <p className="leading-relaxed">
-                    Setiap Ahad - Jumaat<br />
-                    7.40 Pagi - 6.30 Petang
-                  </p>
-                </div>
+                    <div>
+                      <div className="text-sm md:text-base uppercase text-[#0a0a0a]/60 mb-3">Jam Operasi</div>
+                      <p className="text-xl md:text-2xl text-[#0a0a0a] leading-relaxed">
+                        Setiap Ahad - Jumaat<br />
+                        7.40 Pagi - 6.30 Petang
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
   );
 }
-
