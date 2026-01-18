@@ -54,13 +54,13 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
       isScrolled 
-        ? 'backdrop-blur-md bg-white/90' 
-        : 'bg-transparent'
+        ? 'bg-white border-[#0a0a0a]' 
+        : 'bg-transparent border-transparent'
     }`}>
-      <div className="container px-4 mx-auto sm:px-6 lg:px-8 pt-2">
-        <div className="flex justify-between items-center h-12 md:h-14">
+      <div className="container px-6 mx-auto sm:px-8 lg:px-12">
+        <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center transition-opacity hover:opacity-80">
             <Image
@@ -74,34 +74,25 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center space-x-6 md:flex">
+          <div className="hidden items-center space-x-8 md:flex">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative text-sm font-medium transition-colors ${
+                  className={`relative text-base font-bold uppercase tracking-wide transition-colors ${
                     isActive
-                      ? isScrolled
-                        ? 'text-accent'
-                        : 'text-secondary'
+                      ? 'text-[#0675ad]'
                       : isScrolled
-                      ? 'text-slate-700 hover:text-accent'
-                      : 'text-secondary hover:text-accent'
+                      ? 'text-[#0a0a0a] hover:text-[#0675ad]'
+                      : 'text-white hover:text-[#0675ad]'
                   }`}
                 >
                   {item.label}
-                  {/* Animated Underline */}
-                  <span 
-                    className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
-                      isActive 
-                        ? isScrolled
-                          ? 'bg-accent w-full'
-                          : 'bg-secondary w-full'
-                        : 'bg-accent w-0 hover:w-full'
-                    }`}
-                  ></span>
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-[#0675ad] w-full"></span>
+                  )}
                 </Link>
               );
             })}
@@ -110,40 +101,32 @@ export default function Navbar() {
             <div className="relative dropdown-container">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className={`relative text-sm font-medium transition-colors flex items-center ${
+                className={`relative text-base font-bold uppercase tracking-wide transition-colors flex items-center ${
                   isSyarikatPage
-                    ? isScrolled
-                      ? 'text-accent'
-                      : 'text-secondary'
+                    ? 'text-[#0675ad]'
                     : isScrolled
-                    ? 'text-slate-700 hover:text-accent'
-                    : 'text-secondary hover:text-accent'
+                    ? 'text-[#0a0a0a] hover:text-[#0675ad]'
+                    : 'text-white hover:text-[#0675ad]'
                 }`}
               >
                 Syarikat
                 <svg 
-                  className={`w-4 h-4 ml-1 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 ml-2 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
                   fill="none" 
                   stroke="currentColor" 
+                  strokeWidth={2}
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path strokeLinecap="square" strokeLinejoin="miter" d="M19 9l-7 7-7-7" />
                 </svg>
-                {/* Animated Underline */}
-                <span 
-                  className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
-                    isSyarikatPage 
-                      ? isScrolled
-                        ? 'bg-accent w-full'
-                        : 'bg-secondary w-full'
-                      : 'bg-accent w-0 hover:w-full'
-                  }`}
-                ></span>
+                {isSyarikatPage && (
+                  <span className="absolute bottom-0 left-0 h-0.5 bg-[#0675ad] w-full"></span>
+                )}
               </button>
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute left-0 top-full z-50 py-2 mt-2 w-64 bg-white rounded-lg border shadow-xl border-slate-200">
+                <div className="absolute left-0 top-full z-50 py-4 mt-2 w-80 bg-white border border-[#0a0a0a]">
                   {syarikatItems.map((item) => {
                     const isActive = pathname === item.href;
                     return (
@@ -151,10 +134,10 @@ export default function Navbar() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setIsDropdownOpen(false)}
-                        className={`block px-4 py-2 text-sm transition-colors ${
+                        className={`block px-6 py-3 text-sm font-bold uppercase tracking-wide transition-colors border-b border-[#0a0a0a]/10 last:border-b-0 ${
                           isActive
-                            ? 'font-semibold text-accent bg-accent/10'
-                            : 'text-slate-700 hover:text-accent hover:bg-slate-50'
+                            ? 'text-[#0675ad] bg-[#0a0a0a]/5'
+                            : 'text-[#0a0a0a] hover:text-[#0675ad] hover:bg-[#0a0a0a]/5'
                         }`}
                       >
                         {item.label}
@@ -168,27 +151,18 @@ export default function Navbar() {
             {/* Hubungi Kami */}
             <Link
               href="/hubungi-kami"
-              className={`relative text-sm font-medium transition-colors ${
+              className={`relative text-base font-bold uppercase tracking-wide transition-colors ${
                 pathname === '/hubungi-kami'
-                  ? isScrolled
-                    ? 'text-accent'
-                    : 'text-secondary'
+                  ? 'text-[#0675ad]'
                   : isScrolled
-                  ? 'text-slate-700 hover:text-accent'
-                  : 'text-secondary hover:text-accent'
+                  ? 'text-[#0a0a0a] hover:text-[#0675ad]'
+                  : 'text-white hover:text-[#0675ad]'
               }`}
             >
               Hubungi Kami
-              {/* Animated Underline */}
-              <span 
-                className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
-                  pathname === '/hubungi-kami' 
-                    ? isScrolled
-                      ? 'bg-accent w-full'
-                      : 'bg-secondary w-full'
-                    : 'bg-accent w-0 hover:w-full'
-                }`}
-              ></span>
+              {pathname === '/hubungi-kami' && (
+                <span className="absolute bottom-0 left-0 h-0.5 bg-[#0675ad] w-full"></span>
+              )}
             </Link>
           </div>
 
@@ -196,8 +170,8 @@ export default function Navbar() {
           <button
             className={`md:hidden transition-colors ${
               isScrolled 
-                ? 'text-slate-700 hover:text-accent' 
-                : 'text-secondary hover:text-accent'
+                ? 'text-[#0a0a0a]' 
+                : 'text-white'
             } focus:outline-none`}
             onClick={() => {
               const menu = document.getElementById('mobile-menu');
@@ -208,34 +182,30 @@ export default function Navbar() {
             <svg
               className="w-6 h-6"
               fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
               stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
             >
-              <path d="M4 6h16M4 12h16M4 18h16"></path>
+              <path strokeLinecap="square" strokeLinejoin="miter" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        <div id="mobile-menu" className="hidden pb-3 md:hidden">
-          <div className="flex flex-col space-y-2">
+        <div id="mobile-menu" className="hidden pb-4 md:hidden border-t border-[#0a0a0a]/10">
+          <div className="flex flex-col space-y-0 pt-4">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-base font-bold uppercase tracking-wide py-3 transition-colors border-b border-[#0a0a0a]/10 ${
                     isActive
-                      ? isScrolled
-                        ? 'pl-3 border-l-4 text-accent border-accent'
-                        : 'pl-3 border-l-4 text-secondary border-secondary'
+                      ? 'text-[#0675ad]'
                       : isScrolled
-                      ? 'pl-3 text-slate-700 hover:text-accent'
-                      : 'pl-3 text-secondary hover:text-accent'
+                      ? 'text-[#0a0a0a] hover:text-[#0675ad]'
+                      : 'text-white hover:text-[#0675ad]'
                   }`}
                   onClick={() => {
                     const menu = document.getElementById('mobile-menu');
@@ -254,41 +224,40 @@ export default function Navbar() {
                   const submenu = document.getElementById('mobile-syarikat-submenu');
                   submenu?.classList.toggle('hidden');
                 }}
-                className={`text-sm font-medium transition-colors flex items-center justify-between w-full ${
+                className={`text-base font-bold uppercase tracking-wide flex items-center justify-between w-full py-3 transition-colors border-b border-[#0a0a0a]/10 ${
                   isSyarikatPage
-                    ? isScrolled
-                      ? 'pl-3 border-l-4 text-accent border-accent'
-                      : 'pl-3 border-l-4 text-secondary border-secondary'
+                    ? 'text-[#0675ad]'
                     : isScrolled
-                    ? 'pl-3 text-slate-700 hover:text-accent'
-                    : 'pl-3 text-secondary hover:text-accent'
+                    ? 'text-[#0a0a0a] hover:text-[#0675ad]'
+                    : 'text-white hover:text-[#0675ad]'
                 }`}
               >
                 <span>Syarikat</span>
                 <svg 
                   className="w-4 h-4"
                   fill="none" 
-                  stroke="currentColor" 
+                  stroke="currentColor"
+                  strokeWidth={2}
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path strokeLinecap="square" strokeLinejoin="miter" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
               {/* Mobile Submenu */}
-              <div id="mobile-syarikat-submenu" className="hidden pl-6 mt-2 space-y-1">
+              <div id="mobile-syarikat-submenu" className="hidden bg-[#0a0a0a]/5">
                 {syarikatItems.map((item) => {
                   const isActive = pathname === item.href;
                   return (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`block text-sm transition-colors py-2 ${
+                      className={`block text-sm font-bold uppercase tracking-wide py-3 px-6 transition-colors border-b border-[#0a0a0a]/10 ${
                         isActive
-                          ? 'font-semibold text-accent'
+                          ? 'text-[#0675ad]'
                           : isScrolled
-                          ? 'text-slate-600 hover:text-accent'
-                          : 'text-slate-300 hover:text-secondary'
+                          ? 'text-[#0a0a0a] hover:text-[#0675ad]'
+                          : 'text-white hover:text-[#0675ad]'
                       }`}
                       onClick={() => {
                         const menu = document.getElementById('mobile-menu');
@@ -305,14 +274,12 @@ export default function Navbar() {
             {/* Mobile Hubungi Kami */}
             <Link
               href="/hubungi-kami"
-              className={`text-sm font-medium transition-colors ${
+              className={`text-base font-bold uppercase tracking-wide py-3 transition-colors border-b border-[#0a0a0a]/10 ${
                 pathname === '/hubungi-kami'
-                  ? isScrolled
-                    ? 'text-accent border-l-4 border-accent pl-3'
-                    : 'text-secondary border-l-4 border-secondary pl-3'
+                  ? 'text-[#0675ad]'
                   : isScrolled
-                  ? 'text-slate-700 hover:text-accent pl-3'
-                  : 'text-secondary hover:text-accent pl-3'
+                  ? 'text-[#0a0a0a] hover:text-[#0675ad]'
+                  : 'text-white hover:text-[#0675ad]'
               }`}
               onClick={() => {
                 const menu = document.getElementById('mobile-menu');
@@ -327,4 +294,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
