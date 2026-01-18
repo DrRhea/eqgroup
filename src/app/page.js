@@ -208,7 +208,7 @@ export default function Home() {
             variants={staggerContainer}
             className="w-full"
           >
-            <div className="border-t border-b border-[#0a0a0a]">
+            <div>
               <div className="py-24 lg:py-32 space-y-24">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
                   <motion.div 
@@ -306,7 +306,7 @@ export default function Home() {
             variants={staggerContainer}
             className="w-full"
           >
-            <div className="border-t border-b border-white">
+            <div>
               <div className="py-24 lg:py-32 space-y-24">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
                   <motion.div 
