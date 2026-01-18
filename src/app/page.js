@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative bg-white h-screen flex items-center overflow-hidden">
+      <section ref={heroRef} className="relative bg-[#0a0a0a] h-screen flex items-center overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -41,27 +41,29 @@ export default function Home() {
             opacity: opacity,
           }}
         />
-        <div className="absolute inset-0 bg-[#0a0a0a]/60" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/80" />
         
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10 w-full">
           <motion.div 
-            className="max-w-7xl mx-auto"
+            className="max-w-6xl mx-auto"
             initial="initial"
             animate="animate"
             variants={staggerContainer}
           >
-            <motion.h1 
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-none"
+            <motion.div 
+              className="space-y-8"
               variants={fadeInUp}
             >
-              EQ GROUP GLOBAL
-            </motion.h1>
-            <motion.p 
-              className="text-lg sm:text-xl md:text-2xl text-white/90 mt-6 font-light tracking-wide"
-              variants={fadeInUp}
-            >
-              Menerajui Pelbagai Industri Menuju Masa Depan Serantau
-            </motion.p>
+              <div className="space-y-6">
+                <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight leading-none">
+                  EQ GROUP GLOBAL
+                </h1>
+                <div className="h-1 w-32 bg-[#0675ad]" />
+              </div>
+              <p className="text-xl sm:text-2xl md:text-3xl text-white/70 font-light tracking-wide max-w-4xl leading-relaxed">
+                Menerajui Pelbagai Industri Menuju Masa Depan Serantau
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
