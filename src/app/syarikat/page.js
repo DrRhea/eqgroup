@@ -61,7 +61,7 @@ export default function Syarikat() {
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
           >
-            <div className="border-t border-b border-[#0a0a0a]">
+            <div>
               <div className="py-24 lg:py-32 space-y-24">
                 {/* Header */}
                 <motion.div 
