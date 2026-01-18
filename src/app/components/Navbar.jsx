@@ -81,12 +81,12 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative text-base font-bold uppercase tracking-wide transition-colors ${
+                  className={`relative text-base uppercase tracking-wide transition-colors ${
                     isActive
-                      ? 'text-[#0675ad]'
+                      ? 'text-[#0675ad] font-black'
                       : isScrolled
-                      ? 'text-[#0a0a0a] hover:text-[#0675ad]'
-                      : 'text-white hover:text-[#0675ad]'
+                      ? 'text-[#0a0a0a] hover:text-[#0675ad] font-bold'
+                      : 'text-white hover:text-[#0675ad] font-bold'
                   }`}
                 >
                   {item.label}
@@ -101,12 +101,12 @@ export default function Navbar() {
             <div className="relative dropdown-container">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className={`relative text-base font-bold uppercase tracking-wide transition-colors flex items-center ${
+                className={`relative text-base uppercase tracking-wide transition-colors flex items-center ${
                   isSyarikatPage
-                    ? 'text-[#0675ad]'
+                    ? 'text-[#0675ad] font-black'
                     : isScrolled
-                    ? 'text-[#0a0a0a] hover:text-[#0675ad]'
-                    : 'text-white hover:text-[#0675ad]'
+                    ? 'text-[#0a0a0a] hover:text-[#0675ad] font-bold'
+                    : 'text-white hover:text-[#0675ad] font-bold'
                 }`}
               >
                 Syarikat
@@ -134,10 +134,10 @@ export default function Navbar() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setIsDropdownOpen(false)}
-                        className={`block px-6 py-3 text-sm font-bold uppercase tracking-wide transition-colors border-b border-[#0a0a0a]/10 last:border-b-0 ${
+                        className={`block px-6 py-3 text-sm uppercase tracking-wide transition-colors border-b border-[#0a0a0a]/10 last:border-b-0 ${
                           isActive
-                            ? 'text-[#0675ad] bg-[#0a0a0a]/5'
-                            : 'text-[#0a0a0a] hover:text-[#0675ad] hover:bg-[#0a0a0a]/5'
+                            ? 'text-[#0675ad] bg-[#0a0a0a]/5 font-black'
+                            : 'text-[#0a0a0a] hover:text-[#0675ad] hover:bg-[#0a0a0a]/5 font-bold'
                         }`}
                       >
                         {item.label}
@@ -151,12 +151,12 @@ export default function Navbar() {
             {/* Hubungi Kami */}
             <Link
               href="/hubungi-kami"
-              className={`relative text-base font-bold uppercase tracking-wide transition-colors ${
+              className={`relative text-base uppercase tracking-wide transition-colors ${
                 pathname === '/hubungi-kami'
-                  ? 'text-[#0675ad]'
+                  ? 'text-[#0675ad] font-black'
                   : isScrolled
-                  ? 'text-[#0a0a0a] hover:text-[#0675ad]'
-                  : 'text-white hover:text-[#0675ad]'
+                  ? 'text-[#0a0a0a] hover:text-[#0675ad] font-bold'
+                  : 'text-white hover:text-[#0675ad] font-bold'
               }`}
             >
               Hubungi Kami
@@ -200,12 +200,12 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-base font-bold uppercase tracking-wide py-3 transition-colors border-b border-[#0a0a0a]/10 ${
+                  className={`text-base uppercase tracking-wide py-3 transition-colors border-b border-[#0a0a0a]/10 ${
                     isActive
-                      ? 'text-[#0675ad]'
+                      ? 'text-[#0675ad] font-black'
                       : isScrolled
-                      ? 'text-[#0a0a0a] hover:text-[#0675ad]'
-                      : 'text-white hover:text-[#0675ad]'
+                      ? 'text-[#0a0a0a] hover:text-[#0675ad] font-bold'
+                      : 'text-white hover:text-[#0675ad] font-bold'
                   }`}
                   onClick={() => {
                     const menu = document.getElementById('mobile-menu');
@@ -224,12 +224,12 @@ export default function Navbar() {
                   const submenu = document.getElementById('mobile-syarikat-submenu');
                   submenu?.classList.toggle('hidden');
                 }}
-                className={`text-base font-bold uppercase tracking-wide flex items-center justify-between w-full py-3 transition-colors border-b border-[#0a0a0a]/10 ${
+                className={`text-base uppercase tracking-wide flex items-center justify-between w-full py-3 transition-colors border-b border-[#0a0a0a]/10 ${
                   isSyarikatPage
-                    ? 'text-[#0675ad]'
+                    ? 'text-[#0675ad] font-black'
                     : isScrolled
-                    ? 'text-[#0a0a0a] hover:text-[#0675ad]'
-                    : 'text-white hover:text-[#0675ad]'
+                    ? 'text-[#0a0a0a] hover:text-[#0675ad] font-bold'
+                    : 'text-white hover:text-[#0675ad] font-bold'
                 }`}
               >
                 <span>Syarikat</span>
@@ -252,12 +252,12 @@ export default function Navbar() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`block text-sm font-bold uppercase tracking-wide py-3 px-6 transition-colors border-b border-[#0a0a0a]/10 ${
+                      className={`block text-sm uppercase tracking-wide py-3 px-6 transition-colors border-b border-[#0a0a0a]/10 ${
                         isActive
-                          ? 'text-[#0675ad]'
+                          ? 'text-[#0675ad] font-black'
                           : isScrolled
-                          ? 'text-[#0a0a0a] hover:text-[#0675ad]'
-                          : 'text-white hover:text-[#0675ad]'
+                          ? 'text-[#0a0a0a] hover:text-[#0675ad] font-bold'
+                          : 'text-white hover:text-[#0675ad] font-bold'
                       }`}
                       onClick={() => {
                         const menu = document.getElementById('mobile-menu');
