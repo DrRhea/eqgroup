@@ -274,12 +274,12 @@ export default function Navbar() {
             {/* Mobile Hubungi Kami */}
             <Link
               href="/hubungi-kami"
-              className={`text-base font-bold uppercase tracking-wide py-3 transition-colors border-b border-[#0a0a0a]/10 ${
+              className={`text-base uppercase tracking-wide py-3 transition-colors border-b border-[#0a0a0a]/10 ${
                 pathname === '/hubungi-kami'
-                  ? 'text-[#0675ad]'
+                  ? 'text-[#0675ad] font-black'
                   : isScrolled
-                  ? 'text-[#0a0a0a] hover:text-[#0675ad]'
-                  : 'text-white hover:text-[#0675ad]'
+                  ? 'text-[#0a0a0a] hover:text-[#0675ad] font-bold'
+                  : 'text-white hover:text-[#0675ad] font-bold'
               }`}
               onClick={() => {
                 const menu = document.getElementById('mobile-menu');
