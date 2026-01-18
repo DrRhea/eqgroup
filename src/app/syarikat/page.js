@@ -107,11 +107,11 @@ export default function Syarikat() {
                           <div className="lg:col-span-9 space-y-4">
                             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                               <div>
-                                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase mb-2 group-hover:text-white transition-colors">
+                                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase mb-2 text-[#0a0a0a] group-hover:text-white transition-colors">
                                   {company.title}
                                 </h3>
                                 <div className="flex flex-wrap gap-4 text-base md:text-lg">
-                                  <span className="text-[#0675ad] group-hover:text-white/80 font-medium uppercase">
+                                  <span className="text-[#0a0a0a] group-hover:text-white/80 font-medium uppercase">
                                     {company.subtitle}
                                   </span>
                                   <span className="text-[#0a0a0a] group-hover:text-white/60">
@@ -119,7 +119,7 @@ export default function Syarikat() {
                                   </span>
                                 </div>
                               </div>
-                              <svg className="w-8 h-8 lg:w-10 lg:h-10 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-8 h-8 lg:w-10 lg:h-10 group-hover:translate-x-2 transition-transform duration-300 text-[#0a0a0a] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                               </svg>
                             </div>

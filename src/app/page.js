@@ -237,10 +237,10 @@ export default function Home() {
                       >
                         <div className="flex items-center justify-between">
                           <div className="space-y-2">
-                            <h3 className="text-2xl md:text-3xl font-bold uppercase">Smart Quran Malaysia Centre</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold uppercase text-[#0a0a0a] group-hover:text-white transition-colors">Smart Quran Malaysia Centre</h3>
                             <p className="text-base md:text-lg text-[#0a0a0a] group-hover:text-white/80">Pendidikan Islamic • Didirikan 2024</p>
                           </div>
-                          <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 text-[#0a0a0a] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                           </svg>
                         </div>
@@ -252,10 +252,10 @@ export default function Home() {
                       >
                         <div className="flex items-center justify-between">
                           <div className="space-y-2">
-                            <h3 className="text-2xl md:text-3xl font-bold uppercase">eMindTutor</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold uppercase text-[#0a0a0a] group-hover:text-white transition-colors">eMindTutor</h3>
                             <p className="text-base md:text-lg text-[#0a0a0a] group-hover:text-white/80">Sistem Pengurusan Pusat Tuisyen • Didirikan 2026</p>
                           </div>
-                          <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 text-[#0a0a0a] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                           </svg>
                         </div>
@@ -267,10 +267,10 @@ export default function Home() {
                       >
                         <div className="flex items-center justify-between">
                           <div className="space-y-2">
-                            <h3 className="text-2xl md:text-3xl font-bold uppercase">Core HR Centre</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold uppercase text-[#0a0a0a] group-hover:text-white transition-colors">Core HR Centre</h3>
                             <p className="text-base md:text-lg text-[#0a0a0a] group-hover:text-white/80">Pengurusan Sumber Manusia • Didirikan 2025</p>
                           </div>
-                          <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 text-[#0a0a0a] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                           </svg>
                         </div>
@@ -284,8 +284,8 @@ export default function Home() {
                     href="/syarikat" 
                     className="group inline-flex items-center justify-between w-full lg:w-auto border-t border-b border-[#0a0a0a] px-0 py-8 lg:px-16 lg:py-12 hover:bg-[#0a0a0a] hover:text-white transition-all duration-300"
                   >
-                    <span className="text-xl md:text-2xl font-medium tracking-wide uppercase">Lihat Semua Syarikat</span>
-                    <svg className="w-6 h-6 ml-8 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span className="text-xl md:text-2xl font-medium tracking-wide uppercase text-[#0a0a0a] group-hover:text-white transition-colors">Lihat Semua Syarikat</span>
+                    <svg className="w-6 h-6 ml-8 group-hover:translate-x-2 transition-transform duration-300 text-[#0a0a0a] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </Link>
