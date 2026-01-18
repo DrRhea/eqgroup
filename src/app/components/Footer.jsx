@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="bg-[#0a0a0a] text-white pt-8 md:pt-12 pb-24 md:pb-32 lg:pb-40">
       <div className="container px-6 mx-auto sm:px-8 lg:px-12">
         <div>
-          <div className="space-y-24">
+          <div className="space-y-16">
             {/* Main Content */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16">
               {/* Company Info */}
@@ -119,8 +119,8 @@ export default function Footer() {
             </div>
 
             {/* Copyright */}
-            <div className="pt-12">
-              <p className="text-center text-lg text-white/80">
+            <div className="pt-8">
+              <p className="text-center text-base text-white/80">
                 © {currentYear} EQ Group Global. Hak cipta terpelihara.
               </p>
             </div>
