@@ -59,16 +59,16 @@ export default function Navbar() {
         ? 'backdrop-blur-md bg-white/90' 
         : 'bg-transparent'
     }`}>
-      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14 md:h-16">
+      <div className="container px-4 mx-auto sm:px-6 lg:px-8 pt-2">
+        <div className="flex justify-between items-center h-12 md:h-14">
           {/* Logo */}
           <Link href="/" className="flex items-center transition-opacity hover:opacity-80">
             <Image
               src="/images/logo/eq-group-logo.png"
               alt="EQ Group Global Logo"
-              width={150}
-              height={50}
-              className="object-contain w-auto h-14 md:h-16"
+              width={120}
+              height={40}
+              className="object-contain w-auto h-10 md:h-12"
               priority
             />
           </Link>

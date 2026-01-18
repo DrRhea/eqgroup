@@ -1,12 +1,12 @@
-import { Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-const montserrat = Montserrat({
+const inter = Inter({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -64,14 +64,14 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/logo/eq-group-logo.png", sizes: "any" },
-      { url: "/images/logo/eq-group-logo.png", sizes: "32x32", type: "image/png" },
-      { url: "/images/logo/eq-group-logo.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.ico", sizes: "16x16" },
     ],
     apple: [
       { url: "/images/logo/eq-group-logo.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/images/logo/eq-group-logo.png",
+    shortcut: "/favicon.ico",
   },
   robots: {
     index: true,
@@ -95,7 +95,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ms">
-      <body className={`${montserrat.variable} font-sans`}>
+      <body className={`${inter.variable} font-sans`}>
         <Navbar />
         {children}
         <Footer />
