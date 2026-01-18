@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function EMindTutor() {
   return (
-    <div className="min-h-screen bg-white pt-14 md:pt-16">
-      <section className="bg-white py-16 md:py-24">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-14 md:pt-16">
+      <section className="bg-transparent py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="flex justify-center mb-8">
@@ -27,6 +27,27 @@ export default function EMindTutor() {
               <p>
                 Sebagai sebahagian daripada EQ Group Global, eMindTutor beraspirasi untuk memperluas cakupan ke seluruh Malaysia dan ke pasaran serantau, menawarkan penyelesaian pendidikan yang berorientasikan teknologi dan kecekapan kepada institusi pendidikan masa kini.
               </p>
+
+              {/* Company Info */}
+              <div className="mt-8 bg-gradient-to-br from-primary/10 to-accent/10 p-6 rounded-lg border border-primary/20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">Tahun Didirikan:</h4>
+                    <p className="text-slate-700">2026</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">Laman Web Rasmi:</h4>
+                    <a 
+                      href="https://emindtutor.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-accent hover:text-accent/80 transition-colors font-medium"
+                    >
+                      emindtutor.com
+                    </a>
+                  </div>
+                </div>
+              </div>
               
               <div className="mt-8">
                 <p className="font-semibold text-slate-900 mb-4">

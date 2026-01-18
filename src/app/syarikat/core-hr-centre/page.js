@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function CoreHRCentre() {
   return (
-    <div className="min-h-screen bg-white pt-14 md:pt-16">
-      <section className="bg-white py-16 md:py-24">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-14 md:pt-16">
+      <section className="bg-transparent py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="flex justify-center mb-8">
@@ -31,6 +31,20 @@ export default function CoreHRCentre() {
               <p>
                 Kami membantu syarikat menguruskan rekod pekerja, penggajian, caruman, kehadiran, cuti, dan penilaian prestasi melalui sistem automasi yang tersusun dan mudah digunakan.
               </p>
+
+              {/* Company Info */}
+              <div className="mt-8 bg-gradient-to-br from-primary/10 to-accent/10 p-6 rounded-lg border border-primary/20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">Tahun Didirikan:</h4>
+                    <p className="text-slate-700">2025</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">No. SSM:</h4>
+                    <p className="text-slate-700">AS0495992-K</p>
+                  </div>
+                </div>
+              </div>
               
               <div className="mt-8 bg-slate-50 p-6 border-l-4 border-accent">
                 <p className="font-semibold text-slate-900 mb-4">Antara perkhidmatan utama kami:</p>
@@ -50,6 +64,10 @@ export default function CoreHRCentre() {
               <div className="mt-8 bg-slate-50 p-8 border border-slate-200">
                 <h3 className="text-xl font-semibold text-slate-900 mb-6">Maklumat Hubungan</h3>
                 <div className="space-y-4 text-lg text-slate-700">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 mb-1">No. SSM:</h4>
+                    <p className="text-slate-700">AS0495992-K</p>
+                  </div>
                   <div>
                     <h4 className="font-semibold text-slate-900 mb-1">No Telefon:</h4>
                     <p className="text-slate-500">Belum didaftar</p>

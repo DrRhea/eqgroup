@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function TentangKami() {
   return (
-    <div className="min-h-screen bg-white pt-14 md:pt-16">
-      <section className="bg-white py-16 md:py-24">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-14 md:pt-16">
+      <section className="bg-transparent py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="flex justify-center mb-12">
@@ -55,11 +55,15 @@ export default function TentangKami() {
                   EQ Group Global kini melibatkan empat sektor utama:
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
-                  <li><span className="font-semibold text-accent">Pendidikan Islamic</span> - Smart Quran Malaysia Centre</li>
-                  <li><span className="font-semibold text-accent">Sistem Pengurusan Pusat Tuisyen</span> - eMindTutor</li>
-                  <li><span className="font-semibold text-accent">Pengurusan Sumber Manusia</span> – Core HR Centre</li>
+                  <li><span className="font-semibold text-accent">Pendidikan Islamic</span> - Smart Quran Malaysia Centre (Didirikan 2024)</li>
+                  <li><span className="font-semibold text-accent">Sistem Pengurusan Pusat Tuisyen</span> - eMindTutor (Didirikan 2026)</li>
+                  <li><span className="font-semibold text-accent">Pengurusan Sumber Manusia</span> – Core HR Centre (Didirikan 2025)</li>
                   <li><span className="font-semibold text-accent">F&B Antarabangsa</span> – EQ F&B Division (Akan Datang)</li>
                 </ul>
+                <div className="mt-6 bg-gradient-to-br from-primary/10 to-accent/10 p-6 rounded-lg border border-primary/20">
+                  <p className="text-lg font-semibold text-slate-900 mb-2">Jumlah Karyawan Total:</p>
+                  <p className="text-2xl font-bold text-accent">35++</p>
+                </div>
               </div>
             </div>
 
