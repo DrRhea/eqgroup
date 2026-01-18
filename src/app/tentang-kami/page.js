@@ -21,7 +21,7 @@ const staggerContainer = {
 export default function TentangKami() {
   return (
     <div className="min-h-screen bg-white pt-14 md:pt-16">
-      <section className="bg-white py-24 md:py-32 lg:py-40">
+      <section className="bg-white pt-8 md:pt-12 pb-24 md:pb-32 lg:pb-40">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div 
             className="w-full"
@@ -31,7 +31,7 @@ export default function TentangKami() {
             variants={staggerContainer}
           >
             <div>
-              <div className="py-24 lg:py-32 space-y-32">
+              <div className="space-y-32">
                 {/* Header */}
                 <motion.div 
                   className="text-center space-y-8"
