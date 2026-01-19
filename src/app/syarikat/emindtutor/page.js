@@ -46,7 +46,7 @@ export default function EMindTutor() {
                       priority
                     />
                   </div>
-                  <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-[#0a0a0a] tracking-tight leading-[0.9] uppercase">
+                  <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-[#0a0a0a] tracking-tight leading-[0.9] uppercase break-words px-4">
                     EMINDTUTOR
                   </h1>
                   <div className="h-2 w-32 bg-[#0675ad] mx-auto" />
