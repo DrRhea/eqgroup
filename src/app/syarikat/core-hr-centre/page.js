@@ -20,18 +20,17 @@ const staggerContainer = {
 
 export default function CoreHRCentre() {
   return (
-    <div className="min-h-screen bg-white pt-14 md:pt-16">
+    <div className="min-h-screen bg-white pt-20 md:pt-24">
       <section className="bg-white pt-8 md:pt-12 pb-24 md:pb-32 lg:pb-40">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div 
             className="w-full"
             initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
+            animate="animate"
             variants={staggerContainer}
           >
             <div>
-              <div className="space-y-32">
+              <div className="space-y-16 md:space-y-32">
                 {/* Header */}
                 <motion.div 
                   className="text-center space-y-8"
